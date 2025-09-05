@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Explore India - State Information Site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Explore India - State Information Site</h1>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </header>
+    <main>
+        <div class="cards-container">
+            {% for state in states %}
+                <a href="{{ url_for('state_detail', state_id=state['id']) }}" class="state-card">
+                    <h3>{{ state['name'] }}</h3>
+                    <p>Capital: {{ state['capital'] }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

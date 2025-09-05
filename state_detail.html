@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ state['name'] }} - State Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>State Details</h1>
+        <a href="{{ url_for('home') }}" class="back-btn">Back to Home</a>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </header>
+    <main>
+        <h2>{{ state['name'] }}</h2>
+        <p><strong>Capital:</strong> {{ state['capital'] }}</p>
+        <p><strong>Population:</strong> {{ "{:,}".format(state['population']) }}</p>
+        <p><strong>Area (km²):</strong> {{ "{:,}".format(state['area']) }}</p>
+        <p><strong>Language:</strong> {{ state['language'] }}</p>
+        <p><strong>Region:</strong> {{ state['region'] }}</p>
+        <p><strong>About:</strong> {{ state['about'] }}</p>
+    </main>
+</body>
+</html>
