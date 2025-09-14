@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Explore India - State Information Site</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore India</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Explore India - State Information Site</h1>
-        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
-    </header>
-    <main>
-        <div class="cards-container">
-            {% for state in states %}
-                <a href="{{ url_for('state_detail', state_id=state['id']) }}" class="state-card">
-                    <h3>{{ state['name'] }}</h3>
-                    <p>Capital: {{ state['capital'] }}</p>
-                </a>
-            {% endfor %}
-        </div>
-    </main>
+  <header>
+    <h1>🌏 Explore India – States</h1>
+    <p>Click on a state to explore its culture, economy, and more.</p>
+  </header>
+
+  <div class="cards-container">
+    <div class="card"><a href="/karnataka">Karnataka</a></div>
+    <div class="card"><a href="/kerala">Kerala</a></div>
+    <div class="card"><a href="/tamilnadu">Tamil Nadu</a></div>
+    <div class="card"><a href="/maharashtra">Maharashtra</a></div>
+    <div class="card"><a href="/gujarat">Gujarat</a></div>
+  </div>
 </body>
 </html>
